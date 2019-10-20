@@ -1,0 +1,17 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#homePage {
+	-fx-background-image: url(background.jpg);
+}
+
+#greeting {
+	-fx-font-family: Montserrat;
+	-fx-text-fill: white;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-font-size: 10px;
+}
+
+#search {
+	-fx-background-color: #4D9D76;
+	-fx-text-fill: white;
+}
