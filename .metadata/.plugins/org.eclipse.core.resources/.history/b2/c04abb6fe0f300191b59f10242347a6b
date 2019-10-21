@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +16,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class OfferPageController {
+public class SearchPageController {
 	@FXML
 	private Button backButton;
 	
@@ -35,8 +36,10 @@ public class OfferPageController {
 	private TextField timeInfo;
 	
 	public void buttonChosen(ActionEvent event) throws IOException {
+		//gets stage information
+		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		
 		if (event.getSource() == backButton) {
-			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
 			Scene scene = new Scene(searchPageParent,600,400);
 			
@@ -54,25 +57,23 @@ public class OfferPageController {
 			
 			String time = timeInfo.getText();
 			
-			//create a new ride and save it
-			Ride newRide = new Ride(startingPoint, destination, formattedDate, time);
-			Main.addRide(newRide);
+			//search for rides that matches with info given
+			ArrayList<Ride> availableRides = Main.searchRide(startingPoint, destination, formattedDate, time);
 			
-			//pass ride to the confirmation page
+			//pass rides to the confirmation page
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
-			Parent confirmationPageParent = loader.load();
-			Scene confirmationPageScene = new Scene(confirmationPageParent);
+			loader.setLocation(getClass().getResource("AvailableRidesPageController.fxml"));
+			Parent availablePageParent = loader.load();
+			Scene availablePageScene = new Scene(availablePageParent);
 			
 			//access controller
-			DriverConfirmationPageController controller = loader.getController();
-			controller.initData(newRide);
+			AvailableRidesPageController controller = loader.getController();
+			controller.initData(availableRides);
 			
-			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-			confirmationPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			window.setScene(confirmationPageScene);
+			availablePageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(availablePageScene);
 			window.show();
+			
 		}
-		
 	}
 }

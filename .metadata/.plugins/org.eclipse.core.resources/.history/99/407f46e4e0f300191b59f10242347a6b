@@ -34,7 +34,8 @@
 	-fx-font-weight: bold;
 }
 
-#summaryWindow, #firstRecommendation, #secondRecommendation {
+#summaryWindow {
 	-fx-background-color: #C0CBE0;
 	-fx-background-radius: 16px;
 }
+

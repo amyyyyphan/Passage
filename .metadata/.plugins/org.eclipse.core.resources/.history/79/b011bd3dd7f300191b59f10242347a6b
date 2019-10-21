@@ -43,7 +43,8 @@ public class OfferPageController {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-		} else {
+		}
+		else {
 			String startingPoint = startInfo.getText();
 			String destination = destinationInfo.getText();
 			
