@@ -38,7 +38,10 @@
          </font>
       </Button>
       <DatePicker layoutX="58.0" layoutY="230.0" prefHeight="35.0" prefWidth="485.0" />
-      <Button fx:id="backButton" layoutX="180.0" layoutY="345.0" mnemonicParsing="false" onAction="#buttonChosen" prefHeight="30.0" prefWidth="90.0" text="Back" />
+      <Button fx:id="backButton" layoutX="180.0" layoutY="345.0" mnemonicParsing="false" onAction="#buttonChosen" prefHeight="30.0" prefWidth="90.0" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <AnchorPane fx:id="titleBorder" prefHeight="50.0" prefWidth="600.0">
          <children>
             <Label fx:id="pageTitle" layoutX="247.0" layoutY="12.0" text="Travel Details">

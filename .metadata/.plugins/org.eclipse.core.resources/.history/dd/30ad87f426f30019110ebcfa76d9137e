@@ -1,0 +1,55 @@
+package application;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+
+public class OfferPageController {
+	@FXML
+	private Button nextButton;
+	
+	@FXML
+	private TextField startInfo;
+	
+	@FXML
+	private TextField destinationInfo;
+	
+	@FXML
+	private DatePicker dateInfo;
+	
+	@FXML
+	private TextField timeInfo;
+	
+	public void buttonChosen(ActionEvent event) throws IOException {
+		String startingPoint = startInfo.getText();
+		String destination = destinationInfo.getText();
+		
+		//convert date to string
+		LocalDate date = dateInfo.getValue();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		String formattedDate = date.format(formatter);
+		
+		String time = timeInfo.getText();
+		
+		//create a new ride and save it
+		Ride newRide = new Ride(startingPoint, destination, formattedDate, time);
+		Main.addRide(newRide);
+		
+		//pass ride to the confirmation page
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
+		Parent confirmationPageParent = loader.load();
+		Scene confirmationPageScene = new Scene(confirmationPageParent);
+		
+		DriverConfirmationPageController controller = loader.getController();
+	}
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="page" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DriverConfirmationPageController">
+   <children>
+      <AnchorPane fx:id="titleBorder" layoutX="1.0" prefHeight="25.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="pageTitle" layoutX="226.0" layoutY="6.0" text="Confirmation Page">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="status" layoutX="140.0" layoutY="46.0" text="Congrats! Your Ride Offer is now up.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="summaryWindow" layoutX="47.0" layoutY="92.0" prefHeight="269.0" prefWidth="215.0">
+         <children>
+            <Label layoutX="19.0" layoutY="35.0" text="Starting Point:" />
+            <Label fx:id="startDetail" layoutX="18.0" layoutY="52.0" text="Label" />
+            <Label layoutX="16.0" layoutY="78.0" text="Destination:" />
+            <Label fx:id="destinationDetail" layoutX="18.0" layoutY="95.0" text="Label" />
+            <Label layoutX="17.0" layoutY="126.0" text="Date of Travel:" />
+            <Label fx:id="dateDetail" layoutX="18.0" layoutY="143.0" text="Label" />
+            <Label layoutX="17.0" layoutY="170.0" text="Time of Travel:" />
+            <Label fx:id="timeDetail" layoutX="18.0" layoutY="187.0" text="Label" />
+            <Label layoutX="16.0" layoutY="214.0" text="Seat Details:" />
+            <Label fx:id="seatDetail" layoutX="18.0" layoutY="231.0" text="Label" />
+            <Label alignment="CENTER" layoutX="47.0" layoutY="4.0" text="Summary of Details">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="labels" layoutX="301.0" layoutY="92.0" prefHeight="70.0" prefWidth="256.0" text="Note: Please check back every now and then for rider updates. Your registered contact number will also be displayed for your riders to contact you in case of ride inquiries." wrapText="true" />
+      <Label fx:id="brand" layoutX="529.0" layoutY="361.0" text="Passage">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="greenButton" layoutX="445.0" layoutY="175.0" mnemonicParsing="false" onAction="#backToHomePage" text="Back to Home Page" />
+   </children>
+</AnchorPane>

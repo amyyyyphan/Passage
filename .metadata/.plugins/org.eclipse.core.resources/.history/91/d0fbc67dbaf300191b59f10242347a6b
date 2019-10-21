@@ -19,10 +19,9 @@
 	-fx-font-weight: bold;
 }
 
-#search, #nextButton, #greenButton {
+#search {
 	-fx-background-color: #4D9D76;
 	-fx-text-fill: white;
-	-fx-font-weight: bold;
 }
 
 #titleBorder {
@@ -38,4 +37,3 @@
 	-fx-background-color: #C0CBE0;
 	-fx-background-radius: 16px;
 }
-

@@ -1,6 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 #page {
-	-fx-font-family: Montserrat;
 	-fx-background-color: #323333;
 }
 
@@ -14,28 +13,32 @@
 }
 
 #greeting {
+	-fx-font-family: Montserrat;
 	-fx-text-fill: white;
 	-fx-font-style: normal;
 	-fx-font-weight: bold;
 }
 
-#search, #nextButton, #greenButton {
+#search {
 	-fx-background-color: #4D9D76;
 	-fx-text-fill: white;
-	-fx-font-weight: bold;
 }
 
 #titleBorder {
 	-fx-background-color: #4D9D76;
 }
 
-#pageTitle, #status {
+#pageTitle {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#status {
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }
 
 #summaryWindow {
-	-fx-background-color: #C0CBE0;
-	-fx-background-radius: 16px;
+	-fx-background: #C0CBE0;
+	-fx-border-radius: 16px;
 }
-

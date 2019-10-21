@@ -31,7 +31,7 @@ public class MainController {
 		//gets stage information
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		
-		if (event.getSource() == search) {
+		if (event.getSource()==search) {
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Search.fxml"));
 			Scene scene = new Scene(searchPageParent,600,400);
 			
