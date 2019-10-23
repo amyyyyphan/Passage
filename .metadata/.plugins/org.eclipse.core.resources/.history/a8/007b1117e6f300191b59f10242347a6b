@@ -1,0 +1,41 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#page {
+	-fx-font-family: Montserrat;
+	-fx-background-image: url(background.jpg);
+	-fx-background-position: absolute;
+}
+
+#labels {
+	-fx-text-fill: white;
+}
+
+#brand {
+	-fx-text-fill: #4D9D76;
+	-fx-font-weight: bold;
+}
+
+#greeting {
+	-fx-text-fill: white;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+}
+
+#search, #nextButton, #greenButton {
+	-fx-background-color: #4D9D76;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#titleBorder {
+	-fx-background-color: #4D9D76;
+}
+
+#pageTitle, #status {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#summaryWindow, #firstRecommendation, #secondRecommendation {
+	-fx-background-color: #C0CBE0;
+	-fx-background-radius: 16px;
+}

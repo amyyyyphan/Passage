@@ -27,21 +27,20 @@ public class MainController {
 	private Button offer;
 	
 	@FXML
-	public void choice(ActionEvent event) throws IOException {
-		//gets stage information
-		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-		
+	public void choice(ActionEvent event) throws IOException {	
 		if (event.getSource() == search) {
+			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Search.fxml"));
-			Scene scene = new Scene(searchPageParent, 600, 400);
+			Scene scene = new Scene(searchPageParent, 900, 600);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		}
 		else {
+			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			Parent offerPageParent = FXMLLoader.load(getClass().getResource("OfferPage.fxml"));
-			Scene scene = new Scene(offerPageParent,600,400);
+			Scene scene = new Scene(offerPageParent, 900, 600);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);

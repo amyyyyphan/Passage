@@ -3,49 +3,87 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="page" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DriverConfirmationPageController">
+<AnchorPane fx:id="page" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DriverConfirmationPageController">
    <children>
-      <AnchorPane fx:id="titleBorder" layoutX="1.0" prefHeight="25.0" prefWidth="600.0">
+      <AnchorPane fx:id="titleBorder" prefHeight="60.0" prefWidth="900.0">
          <children>
-            <Label fx:id="pageTitle" layoutX="226.0" layoutY="6.0" text="Confirmation Page">
+            <Label fx:id="pageTitle" layoutX="351.0" layoutY="13.0" text="Confirmation Page">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Label fx:id="status" layoutX="140.0" layoutY="46.0" text="Congrats! Your Ride Offer is now up.">
+      <Label fx:id="status" layoutX="161.0" layoutY="83.0" text="Congrats! Your Ride Offer is now up.">
          <font>
-            <Font size="20.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="summaryWindow" layoutX="47.0" layoutY="92.0" prefHeight="269.0" prefWidth="215.0">
+      <AnchorPane fx:id="summaryWindow" layoutX="83.0" layoutY="172.0" prefHeight="320.0" prefWidth="251.0">
          <children>
-            <Label layoutX="19.0" layoutY="35.0" text="Starting Point:" />
-            <Label fx:id="startDetail" layoutX="18.0" layoutY="52.0" text="Label" />
-            <Label layoutX="16.0" layoutY="78.0" text="Destination:" />
-            <Label fx:id="destinationDetail" layoutX="18.0" layoutY="95.0" text="Label" />
-            <Label layoutX="17.0" layoutY="126.0" text="Date of Travel:" />
-            <Label fx:id="dateDetail" layoutX="18.0" layoutY="143.0" text="Label" />
-            <Label layoutX="17.0" layoutY="170.0" text="Time of Travel:" />
-            <Label fx:id="timeDetail" layoutX="18.0" layoutY="187.0" text="Label" />
-            <Label layoutX="16.0" layoutY="214.0" text="Seat Details:" />
-            <Label fx:id="seatDetail" layoutX="18.0" layoutY="231.0" text="Label" />
-            <Label alignment="CENTER" layoutX="47.0" layoutY="4.0" text="Summary of Details">
+            <Label layoutX="17.0" layoutY="47.0" text="Starting Point:">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="startDetail" layoutX="18.0" layoutY="64.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="16.0" layoutY="100.0" text="Destination:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="destinationDetail" layoutX="17.0" layoutY="117.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="17.0" layoutY="152.0" text="Date of Travel:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="dateDetail" layoutX="18.0" layoutY="171.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="17.0" layoutY="206.0" text="Departure Time:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="timeDetail" layoutX="18.0" layoutY="225.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="16.0" layoutY="261.0" text="Seat Details:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="seatDetail" layoutX="16.0" layoutY="280.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label alignment="CENTER" layoutX="57.0" layoutY="4.0" text="Summary of Details">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Label>
+            <Line endX="132.33331298828125" layoutX="105.0" layoutY="35.0" startX="-88.66665649414062" />
          </children>
       </AnchorPane>
-      <Label fx:id="labels" layoutX="301.0" layoutY="92.0" prefHeight="70.0" prefWidth="256.0" text="Note: Please check back every now and then for rider updates. Your registered contact number will also be displayed for your riders to contact you in case of ride inquiries." wrapText="true" />
-      <Label fx:id="brand" layoutX="529.0" layoutY="361.0" text="Passage">
+      <Label fx:id="labels" layoutX="388.0" layoutY="172.0" prefHeight="70.0" prefWidth="433.0" text="Note: Please check back every now and then for rider updates. Your registered contact number will also be displayed for your riders to contact you in case of ride inquiries." wrapText="true">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="brand" layoutX="801.0" layoutY="551.0" text="Passage">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="greenButton" layoutX="445.0" layoutY="175.0" mnemonicParsing="false" onAction="#backToHomePage" text="Back to Home Page" />
+      <Button fx:id="greenButton" layoutX="679.0" layoutY="261.0" mnemonicParsing="false" onAction="#backToHomePage" text="Back to Home Page">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
