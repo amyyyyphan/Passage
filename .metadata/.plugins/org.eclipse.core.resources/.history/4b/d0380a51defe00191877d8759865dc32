@@ -16,7 +16,7 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	private static Connection con;
 	
-	//private static ArrayList<Ride> rides = new ArrayList<Ride>();
+	private static ArrayList<Ride> rides = new ArrayList<Ride>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -40,8 +40,8 @@ public class Main extends Application {
 	}
 	
 	public static void addRide(Ride ride) {			
+		String query = "INSERT INTO ride (name, start, destination, date, time, seats, price) values(?, ?, ?, ?, ?, ?, ?)";
 		try {
-			String query = "INSERT INTO ride (name, start, destination, date, time, seats, price) values(?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, ride.getDriverName());
 			ps.setString(2, ride.getStart());
@@ -52,6 +52,7 @@ public class Main extends Application {
 			ps.setString(7, ride.getPrice());
 			ps.executeUpdate();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//rides.add(ride);
@@ -89,8 +90,6 @@ public class Main extends Application {
 				matchingRides.add(similarRides.get(j));
 			}
 		}
-		
-		
 		
 		return matchingRides;
 	}

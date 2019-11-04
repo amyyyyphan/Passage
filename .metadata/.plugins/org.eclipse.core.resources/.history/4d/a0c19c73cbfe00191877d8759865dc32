@@ -2,8 +2,6 @@ package application;
 	
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javafx.application.Application;
@@ -14,9 +12,7 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
-	private static Connection con;
-	
-	//private static ArrayList<Ride> rides = new ArrayList<Ride>();
+	private static ArrayList<Ride> rides = new ArrayList<Ride>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -39,22 +35,8 @@ public class Main extends Application {
 		launch(args);
 	}
 	
-	public static void addRide(Ride ride) {			
-		try {
-			String query = "INSERT INTO ride (name, start, destination, date, time, seats, price) values(?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, ride.getDriverName());
-			ps.setString(2, ride.getStart());
-			ps.setString(3, ride.getDestination());
-			ps.setString(4, ride.getDate());
-			ps.setString(5, ride.getTime());
-			ps.setString(6, ride.getSeats());
-			ps.setString(7, ride.getPrice());
-			ps.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		//rides.add(ride);
+	public static void addRide(Ride ride) {
+		rides.add(ride);
 	}
 	
 	public static ArrayList<Ride> searchRide(String start, String destination, String date, String time) {
@@ -90,18 +72,15 @@ public class Main extends Application {
 			}
 		}
 		
-		
-		
 		return matchingRides;
 	}
 	
 	public void connectDB() {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost/passage_db", "root", "");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/passageDB", "root", "root");
 			System.out.println("Connected to database");
 		} catch(Exception e) {
 			System.out.println("Failed to connect to database");
-			System.out.println(e.getMessage());
 			
 		}
 	}
