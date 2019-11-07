@@ -1,6 +1,7 @@
 
 #page {
 	-fx-font-family: Montserrat;
+	/*-fx-background-image: url("background.jpg");*/
 	-fx-background-color: #383838;
 }
 
@@ -9,15 +10,20 @@
 	-fx-font-weight: bold;
 }
 
-#greeting {
+#loginButton, #registerButton, #search, #nextButton, #greenButton, #selectButton1, #selectButton2 {
+	-fx-background-color: #4D9D76;
 	-fx-text-fill: white;
-	-fx-font-style: normal;
 	-fx-font-weight: bold;
 }
 
-#search, #nextButton, #greenButton, #selectButton1, #selectButton2 {
-	-fx-background-color: #4D9D76;
+#loginBox, #registerBox {
+	-fx-border-color: #000000;
+	-fx-border-width: 2px;
+}
+
+#greeting {
 	-fx-text-fill: white;
+	-fx-font-style: normal;
 	-fx-font-weight: bold;
 }
 
@@ -30,7 +36,7 @@
 	-fx-background-color: #4D9D76;
 }
 
-#pageTitle, #labels, #status {
+#pageTitle, #agreement, #labels, #status {
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }

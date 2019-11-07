@@ -1,0 +1,63 @@
+
+#page {
+	-fx-font-family: Montserrat;
+	/*-fx-background-image: url("background.jpg");*/
+	-fx-background-color: #383838;
+}
+
+#homeImage {
+	-fx-background-image: url("application/carPicture.png");
+}
+
+#brand {
+	-fx-text-fill: #4D9D76;
+	-fx-font-weight: bold;
+}
+
+#loginButton, #registerButton, #search, #nextButton, #greenButton, #selectButton1, #selectButton2 {
+	-fx-background-color: #4D9D76;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#loginBox {
+	-fx-border-color: #000000;
+	-fx-border-width: 2px;
+	/* -fx-border: 4px solid #000000; */
+	/* -fx-box-sizing: border-box; */
+}
+
+#greeting {
+	-fx-text-fill: white;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+}
+
+#offer, #backButton {
+	-fx-background-color: #C0CBE0;
+	-fx-font-weight: bold;
+}
+
+#titleBorder {
+	-fx-background-color: #4D9D76;
+}
+
+#pageTitle, #labels, #status {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#summaryWindow, #firstRecommendation, #secondRecommendation {
+	-fx-background-color: #C0CBE0;
+	-fx-background-radius: 16px;
+}
+
+#error {
+	-fx-text-fill: red;
+	-fx-font-weight: bold;
+}
+
+#cost1, #cost2 {
+	-fx-text-fill: #4D9D76;
+	-fx-font-weight: bold;
+}

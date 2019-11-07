@@ -29,8 +29,7 @@
       </Label>
       <ImageView fitHeight="151.0" fitWidth="218.0" layoutX="341.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@8f10eb4cf3f83650a2cfef69eba7aa31.png" />
-         </image>
-      </ImageView>
+            <Image url="@carPicture.png" />
+         </image></ImageView>
    </children>
 </AnchorPane>
