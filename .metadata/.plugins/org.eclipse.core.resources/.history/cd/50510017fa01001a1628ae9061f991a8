@@ -41,7 +41,9 @@ public class LoginPageController {
 			window.setScene(scene);
 			window.show();
 		} else {
+			error.setText("Incorrect username/password");
 			error.setVisible(true);
+			System.out.println("Incorrect username/password");
 		}
 	}
 	

@@ -18,6 +18,8 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	private static Connection con;
 	
+	//private static ArrayList<Ride> rides = new ArrayList<Ride>();
+	
 	@Override
 	public void start(Stage primaryStage) {
 		//connect to database
@@ -57,28 +59,6 @@ public class Main extends Application {
 		}
 	}
 	
-	//checks if login information is correct
-	public static boolean checkAccountInfo(String username, String password) {
-		try {
-			Statement statement = con.createStatement();
-			String sql = ("SELECT * FROM `user` WHERE username = '" + username + "' and password = '" + password + "'");
-			ResultSet rs = statement.executeQuery(sql);
-			
-			//return true if there is a username with the password given in the database otherwise false
-			if (rs.next()) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		//should not get to this line
-		return false;
-
-	}
-	
 	public static void addRide(Ride ride) {			
 		try {
 			String query = "INSERT INTO ride (name, start, destination, date, time, seats, price) values(?, ?, ?, ?, ?, ?, ?)";
@@ -101,9 +81,38 @@ public class Main extends Application {
 		//keeps track of rides that matches with description
 		ArrayList<Ride> matchingRides = new ArrayList<Ride>();
 		
+		//keeps track of rides that have different time
+		//this list will added to the matchingRides list later, matching rides will be shown first
+//		ArrayList<Ride> similarRides = new ArrayList<Ride>();
+		
+//		//search for rides that matches with description
+//		for (int i = 0; i < rides.size(); i++) {
+//			Ride currentRide = rides.get(i);
+//			if (currentRide.getStart().equalsIgnoreCase(start)) {
+//				if (currentRide.getDestination().equalsIgnoreCase(destination)) {
+//					if (currentRide.getDate().equals(date)){
+//						if (currentRide.getTime().equalsIgnoreCase(time)) {
+//							matchingRides.add(currentRide);
+//						} else {
+//							//add to ArrayList of similarRides if time doesn't match
+//							similarRides.add(currentRide);
+//						}
+//					}
+//				}
+//			}
+//		}
+		
+//		//add similarRides to matchingRides list if there are rides in it
+//		if (similarRides.size() > 0) {
+//			//current index in matchingRides ArrayList
+//			for (int j = 0; j < similarRides.size(); j++) {
+//				matchingRides.add(similarRides.get(j));
+//			}
+//		}
+		
 		try {
 			Statement statement = con.createStatement();
-			String sql = ("SELECT `name`, `start`, `destination`, `date`, `time`, `seats`, `price` FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' order by abs(timediff(str_to_date('" + time + "', '%h %p'), str_to_date(time, '%h %p'))) asc");
+			String sql = ("SELECT `name`, `start`, `destination`, `date`, `time`, `seats`, `price` FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' order by abs(datediff(str_to_date('" + time + "', '%h %p'), str_to_date(cast(time as UNSIGNED)), '%h %p'))) asc");
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				String name1 = rs.getString("name");
