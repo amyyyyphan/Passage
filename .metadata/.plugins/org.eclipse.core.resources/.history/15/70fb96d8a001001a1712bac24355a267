@@ -60,8 +60,6 @@ public class RegistrationPageController {
 			System.out.println("Invalid phone");
 			//show error label
 		}
-		
-		System.out.println("Password: " + password.getText());
 		if(!validatePassword(password.getText())) {
 			validAccount = false;
 			System.out.println("Invalid pass");
@@ -73,7 +71,7 @@ public class RegistrationPageController {
 			//show error label
 		}
 		
-		//if there's nothing wrong with information given, add user data to database and go to Home page
+		
 		if (validAccount) {
 			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
 			
@@ -112,6 +110,6 @@ public class RegistrationPageController {
 	//	At least one special character
 	//	At least one number
 	private boolean validatePassword(String password) {
-		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$");
+		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
 	}
 }

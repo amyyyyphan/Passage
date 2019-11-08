@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="page" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="page" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationPageController">
    <children>
       <AnchorPane fx:id="titleBorder" prefHeight="60.0" prefWidth="900.0">
          <children>
@@ -76,7 +76,7 @@
                   <Font size="14.0" />
                </font>
             </CheckBox>
-            <Button fx:id="registerButton" layoutX="245.0" layoutY="392.0" mnemonicParsing="false" prefWidth="150.0" text="Register">
+            <Button fx:id="registerButton" layoutX="245.0" layoutY="392.0" mnemonicParsing="false" onAction="#registerButtonPressed" prefWidth="150.0" text="Register">
                <font>
                   <Font size="14.0" />
                </font>

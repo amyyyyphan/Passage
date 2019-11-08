@@ -83,7 +83,7 @@ public class Main extends Application {
 		
 		//keeps track of rides that have different time
 		//this list will added to the matchingRides list later, matching rides will be shown first
-//		ArrayList<Ride> similarRides = new ArrayList<Ride>();
+		ArrayList<Ride> similarRides = new ArrayList<Ride>();
 		
 //		//search for rides that matches with description
 //		for (int i = 0; i < rides.size(); i++) {
@@ -102,17 +102,17 @@ public class Main extends Application {
 //			}
 //		}
 		
-//		//add similarRides to matchingRides list if there are rides in it
-//		if (similarRides.size() > 0) {
-//			//current index in matchingRides ArrayList
-//			for (int j = 0; j < similarRides.size(); j++) {
-//				matchingRides.add(similarRides.get(j));
-//			}
-//		}
+		//add similarRides to matchingRides list if there are rides in it
+		if (similarRides.size() > 0) {
+			//current index in matchingRides ArrayList
+			for (int j = 0; j < similarRides.size(); j++) {
+				matchingRides.add(similarRides.get(j));
+			}
+		}
 		
 		try {
 			Statement statement = con.createStatement();
-			String sql = ("SELECT `name`, `start`, `destination`, `date`, `time`, `seats`, `price` FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' order by abs(datediff(str_to_date('" + time +"', '%h %p'), str_to_date(time, '%h %p')))");
+			String sql = ("SELECT `name`, `start`, `destination`, `date`, `time`, `seats`, `price` FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' order by abs(datediff(str_to_date(" + time +", %h %p), str_to_date(time, '%h %p')))");
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				String name1 = rs.getString("name");

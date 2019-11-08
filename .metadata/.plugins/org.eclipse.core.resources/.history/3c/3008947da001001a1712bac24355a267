@@ -43,37 +43,30 @@ public class RegistrationPageController {
 		boolean validAccount = true;
 		if (!validateName(firstName.getText())) {
 			validAccount = false;
-			System.out.println("Invalid first name");
+			//label
 		}
 		if (!validateName(lastName.getText())) {
 			validAccount = false;
-			System.out.println("Invalid last name");
 			//label
 		}
 		if (!validateEmail(username.getText())) {
 			validAccount = false;
-			System.out.println("Invalid email");
 			//show label
 		}
 		if (!validatePhone(phone.getText())) {
 			validAccount = false;
-			System.out.println("Invalid phone");
 			//show error label
 		}
-		
-		System.out.println("Password: " + password.getText());
 		if(!validatePassword(password.getText())) {
 			validAccount = false;
-			System.out.println("Invalid pass");
 			//show error label
 		}
 		if(!agreement.isSelected()) {
 			validAccount = false;
-			System.out.println("Checkbox not selected");
 			//show error label
 		}
 		
-		//if there's nothing wrong with information given, add user data to database and go to Home page
+		
 		if (validAccount) {
 			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
 			
@@ -112,6 +105,6 @@ public class RegistrationPageController {
 	//	At least one special character
 	//	At least one number
 	private boolean validatePassword(String password) {
-		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$");
+		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
 	}
 }
