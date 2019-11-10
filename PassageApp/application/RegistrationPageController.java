@@ -76,6 +76,7 @@ public class RegistrationPageController {
 		//if there's nothing wrong with information given, add user data to database and go to Home page
 		if (validAccount) {
 			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
+			Main.changeCurrentUser(username.getText());
 			
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));

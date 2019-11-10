@@ -24,9 +24,6 @@ public class OfferPageController {
 	private Button nextButton;
 	
 	@FXML
-	private TextField driverInfo;
-	
-	@FXML
 	private TextField startInfo;
 	
 	@FXML
@@ -37,12 +34,6 @@ public class OfferPageController {
 	
 	@FXML
 	private TextField timeInfo;
-	
-	@FXML
-	private TextField seatInfo;
-	
-	@FXML
-	private TextField priceInfo;
 	
 	@FXML
 	private Label error;
@@ -59,10 +50,9 @@ public class OfferPageController {
 			window.show();
 		} else {
 			//if there's missing information, tell the user
-			if (driverInfo.getText().isEmpty() || startInfo.getText().isEmpty() || destinationInfo.getText().isEmpty() || dateInfo.getValue() == null || timeInfo.getText().isEmpty() || seatInfo.getText().isEmpty() || priceInfo.getText().isEmpty()) {
+			if (startInfo.getText().isEmpty() || destinationInfo.getText().isEmpty() || dateInfo.getValue() == null || timeInfo.getText().isEmpty()) {
 				error.setText("Please fill out all fields.");
 			} else {	
-				String driverName = driverInfo.getText();
 				String startingPoint = startInfo.getText();
 				String destination = destinationInfo.getText();
 					
@@ -72,27 +62,41 @@ public class OfferPageController {
 				String formattedDate = date.format(formatter);
 				
 				String time = timeInfo.getText();
-				String seats = seatInfo.getText();
-				String price = priceInfo.getText();
-				
-				//create a new ride and save it
-				Ride newRide = new Ride(driverName, startingPoint, destination, formattedDate, time, seats, price);
-				Main.addRide(newRide);
 				
 				//pass ride to the confirmation page
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
-				Parent confirmationPageParent = loader.load();
-				Scene confirmationPageScene = new Scene(confirmationPageParent);
+				loader.setLocation(getClass().getResource("DriveDetails.fxml"));
+				Parent driveDetailPageParent = loader.load();
+				Scene driveDetailsPageScene = new Scene(driveDetailPageParent);
 				
 				//access controller
-				DriverConfirmationPageController controller = loader.getController();
-				controller.initData(newRide);
+				DriveDetailsController controller = loader.getController();
+				//pass travel details to Drive Details page
+				controller.travelDetails(startingPoint, destination, formattedDate, time);
 				
 				Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-				confirmationPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				window.setScene(confirmationPageScene);
+				driveDetailsPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				window.setScene(driveDetailsPageScene);
 				window.show();
+				
+				//create a new ride and save it
+//				Ride newRide = new Ride(startingPoint, destination, formattedDate, time);
+//				Main.addRide(newRide);
+				
+//				//pass ride to the confirmation page
+//				FXMLLoader loader = new FXMLLoader();
+//				loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
+//				Parent confirmationPageParent = loader.load();
+//				Scene confirmationPageScene = new Scene(confirmationPageParent);
+//				
+//				//access controller
+//				DriverConfirmationPageController controller = loader.getController();
+//				controller.initData(newRide);
+//				
+//				Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//				confirmationPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//				window.setScene(confirmationPageScene);
+//				window.show();
 			}
 		}
 		

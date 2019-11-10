@@ -1,0 +1,28 @@
+package application;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+public class DriveDetailsController {
+	@FXML
+	private TextField seatInfo;
+	
+	@FXML
+	private TextField priceInfo;
+	
+	@FXML
+	private Label error;
+	
+	private String start;
+	private String destination;
+	private String date;
+	private String time;
+	
+	public void travelDetails(String start, String destination, String date, String time) {
+		this.start = start;
+		this.destination = destination;
+		this.date = date;
+		this.time = time;
+	}
+}

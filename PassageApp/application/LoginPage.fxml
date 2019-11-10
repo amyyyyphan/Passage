@@ -46,7 +46,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label fx:id="error" alignment="CENTER" layoutX="222.0" layoutY="291.0" text="Label" visible="false" />
+            <Label fx:id="error" layoutX="157.0" layoutY="293.0" text="Incorrect username/password" visible="false" />
          </children>
       </AnchorPane>
    </children>

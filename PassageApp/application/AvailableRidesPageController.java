@@ -75,7 +75,7 @@ public class AvailableRidesPageController {
 			destination1.setText(ride.getDestination());
 			time1.setText(ride.getTime());
 			seat1.setText(ride.getSeats());
-			name1.setText(ride.getDriverName());
+			name1.setText(Main.getDriverName(ride.getDriverName()));
 		} else {
 			status.setText("Two rides are recommended for your travel details...");
 			Ride ride1 = rides.get(0);
@@ -84,7 +84,7 @@ public class AvailableRidesPageController {
 			destination1.setText(ride1.getDestination());
 			time1.setText(ride1.getTime());
 			seat1.setText(ride1.getSeats());
-			name1.setText(ride1.getDriverName());
+			name1.setText(Main.getDriverName(ride1.getDriverName()));
 			
 			
 			Ride ride2 = rides.get(1);
