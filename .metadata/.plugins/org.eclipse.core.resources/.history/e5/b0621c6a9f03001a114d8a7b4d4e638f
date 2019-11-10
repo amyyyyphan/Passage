@@ -28,7 +28,7 @@ public class MainController {
 	private Button offer;
 	
 	@FXML
-	private MenuButton userButton;
+	private MenuButton menu;
 	
 	@FXML
 	public void choice(ActionEvent event) throws IOException {	
@@ -67,7 +67,7 @@ public class MainController {
 		controller.initData(Main.viewMyRides());
 		
 		//Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-		Stage window = (Stage) userButton.getScene().getWindow();
+		Stage window = (Stage) menu.getScene().getWindow();
 		myRidesPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		window.setScene(myRidesPageScene);
 		window.show();

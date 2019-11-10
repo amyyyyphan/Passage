@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import  javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,9 +27,6 @@ public class MainController {
 	private Button offer;
 	
 	@FXML
-	private MenuButton userButton;
-	
-	@FXML
 	public void choice(ActionEvent event) throws IOException {	
 		if (event.getSource() == search) {
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -50,27 +46,6 @@ public class MainController {
 			window.setScene(scene);
 			window.show();
 		}
-	}
-	
-	@FXML
-	public void viewMyRides(ActionEvent event) throws IOException {
-		
-		//pass rides to the My Rides page
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("MyRides.fxml"));
-		Parent myRidesPageParent = loader.load();
-		Scene myRidesPageScene = new Scene(myRidesPageParent);
-		
-		//access controller
-		MyRidesController controller = loader.getController();
-		//pass travel details to Drive Details page
-		controller.initData(Main.viewMyRides());
-		
-		//Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-		Stage window = (Stage) userButton.getScene().getWindow();
-		myRidesPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		window.setScene(myRidesPageScene);
-		window.show();
 	}
 	
 	@FXML

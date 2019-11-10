@@ -181,7 +181,7 @@ public class Main extends Application {
 				String seat1 = rs.getString("seats");
 				String price1 = rs.getString("price");
 				Ride rideFound = new Ride(name1, start1, destination1, date1, time1, stopover1, stopover2, arrivalTime1, vehicle1, seat1, price1);
-				myRides.add(rideFound);
+				matchingRides.add(rideFound);
 				System.out.println("Passed");
 			}
 			rs.close();

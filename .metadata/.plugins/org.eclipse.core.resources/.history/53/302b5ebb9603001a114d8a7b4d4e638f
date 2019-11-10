@@ -55,7 +55,7 @@
 	-fx-font-weight: bold;
 }
 
-#summaryWindow, #firstRecommendation, #secondRecommendation, #myRideBox1, #myRideBox2, #myRideBox3, #myRideBox4, #myRideBox5 {
+#summaryWindow, #firstRecommendation, #secondRecommendation {
 	-fx-background-color: #C0CBE0;
 	-fx-background-radius: 16px;
 }

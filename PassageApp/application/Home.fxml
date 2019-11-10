@@ -35,7 +35,7 @@
          </image></ImageView>
       <MenuButton fx:id="userButton" layoutX="846.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#logout" prefHeight="40.0" prefWidth="40.0">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#log" text="View my Rides" />
+          <MenuItem mnemonicParsing="false" onAction="#viewMyRides" text="My Rides" />
           <MenuItem mnemonicParsing="false" text="Logout" />
         </items>
       </MenuButton>

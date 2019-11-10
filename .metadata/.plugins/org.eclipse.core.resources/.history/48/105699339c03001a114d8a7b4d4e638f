@@ -78,6 +78,25 @@ public class OfferPageController {
 				driveDetailsPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				window.setScene(driveDetailsPageScene);
 				window.show();
+				
+				//create a new ride and save it
+//				Ride newRide = new Ride(startingPoint, destination, formattedDate, time);
+//				Main.addRide(newRide);
+				
+//				//pass ride to the confirmation page
+//				FXMLLoader loader = new FXMLLoader();
+//				loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
+//				Parent confirmationPageParent = loader.load();
+//				Scene confirmationPageScene = new Scene(confirmationPageParent);
+//				
+//				//access controller
+//				DriverConfirmationPageController controller = loader.getController();
+//				controller.initData(newRide);
+//				
+//				Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//				confirmationPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//				window.setScene(confirmationPageScene);
+//				window.show();
 			}
 		}
 		

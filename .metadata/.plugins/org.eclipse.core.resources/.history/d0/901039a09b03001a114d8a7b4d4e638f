@@ -161,37 +161,6 @@ public class Main extends Application {
 		return matchingRides;
 	}
 	
-	public static ArrayList<Ride> viewMyRides() {
-		ArrayList<Ride> myRides = new ArrayList<Ride>();
-		
-		try {
-			Statement statement = con.createStatement();
-			String sql = ("SELECT * FROM `ride` WHERE username = '" + currentUser + "' order by abs(datediff(now(), str_to_date(time, '%h %p'))) asc");
-			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next()) {
-				String name1 = rs.getString("username");
-				String start1 = rs.getString("start");
-				String destination1 = rs.getString("destination");
-				String date1 = rs.getString("date");
-				String time1 = rs.getString("time");
-				String stopover1 = rs.getString("stopOver1");
-				String stopover2 = rs.getString("stopOver2");
-				String arrivalTime1 = rs.getString("arrivalTime");
-				String vehicle1 = rs.getString("vehicle");
-				String seat1 = rs.getString("seats");
-				String price1 = rs.getString("price");
-				Ride rideFound = new Ride(name1, start1, destination1, date1, time1, stopover1, stopover2, arrivalTime1, vehicle1, seat1, price1);
-				myRides.add(rideFound);
-				System.out.println("Passed");
-			}
-			rs.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return myRides;
-	}
-	
 	public void connectDB() {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost/passage_db", "root", "");
