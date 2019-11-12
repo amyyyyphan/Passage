@@ -49,7 +49,7 @@ public class DriveDetailsController {
 	@FXML
 	public void nextButtonChosen(ActionEvent event) throws IOException {
 		if (arrivalTime.getText().isEmpty() || vehicle.getText().isEmpty() || seatInfo.getText().isEmpty() || priceInfo.getText().isEmpty()) {
-			error.setText("Please fill out all fields.");
+			error.setText("Please fill out all required fields.");
 		} else {
 			//gets the current user's username to save along with the ride offered in database
 			String driverUsername = Main.getCurrentUsername();

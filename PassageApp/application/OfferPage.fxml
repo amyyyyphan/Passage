@@ -9,64 +9,64 @@
 
 <AnchorPane fx:id="page" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OfferPageController">
    <children>
-      <TextField fx:id="destinationInfo" layoutX="70.0" layoutY="229.0" prefHeight="45.0" prefWidth="750.0">
-         <font>
-            <Font size="18.0" />
-         </font></TextField>
-      <TextField fx:id="timeInfo" layoutX="474.0" layoutY="318.0" prefHeight="45.0" prefWidth="346.0">
-         <font>
-            <Font size="18.0" />
-         </font></TextField>
-      <Label fx:id="labels" layoutX="71.0" layoutY="116.0" text="From">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="labels" layoutX="71.0" layoutY="202.0" text="To">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="labels" layoutX="72.0" layoutY="291.0" text="Date">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="labels" layoutX="475.0" layoutY="291.0" text="Time">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="nextButton" layoutX="456.0" layoutY="536.0" mnemonicParsing="false" onAction="#buttonChosen" prefHeight="30.0" prefWidth="150.0" text="Next">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-      <DatePicker fx:id="dateInfo" layoutX="71.0" layoutY="318.0" prefHeight="45.0" prefWidth="346.0" />
-      <AnchorPane fx:id="titleBorder" prefHeight="60.0" prefWidth="900.0">
+      <AnchorPane fx:id="titleBorder" prefHeight="50.0" prefWidth="900.0">
          <children>
-            <Label fx:id="pageTitle" layoutX="379.0" layoutY="12.0" text="Travel Details">
+            <Label fx:id="pageTitle" layoutX="379.0" layoutY="8.0" text="Travel Details">
                <font>
                   <Font size="24.0" />
                </font></Label>
          </children>
       </AnchorPane>
+      <TextField fx:id="startInfo" layoutX="70.0" layoutY="180.0" prefHeight="45.0" prefWidth="750.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="destinationInfo" layoutX="70.0" layoutY="266.0" prefHeight="45.0" prefWidth="750.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <DatePicker fx:id="dateInfo" layoutX="71.0" layoutY="355.0" prefHeight="45.0" prefWidth="346.0" />
+      <TextField fx:id="timeInfo" layoutX="474.0" layoutY="355.0" prefHeight="45.0" prefWidth="346.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
       <Button fx:id="backButton" layoutX="295.0" layoutY="536.0" mnemonicParsing="false" onAction="#buttonChosen" prefHeight="30.0" prefWidth="150.0" text="Back">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="brand" layoutX="801.0" layoutY="551.0" text="Passage">
+      <Button fx:id="nextButton" layoutX="456.0" layoutY="536.0" mnemonicParsing="false" onAction="#buttonChosen" prefHeight="30.0" prefWidth="150.0" text="Next">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
+         </font></Button>
+      <Label fx:id="labels" layoutX="71.0" layoutY="153.0" text="From">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="71.0" layoutY="239.0" text="To">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="72.0" layoutY="328.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="475.0" layoutY="328.0" text="Time">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="error" alignment="CENTER" layoutX="334.0" layoutY="507.0" prefHeight="17.0" prefWidth="232.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <TextField fx:id="startInfo" layoutX="70.0" layoutY="143.0" prefHeight="45.0" prefWidth="750.0">
+      <Label fx:id="brand" layoutX="801.0" layoutY="551.0" text="Passage">
          <font>
-            <Font size="18.0" />
-         </font></TextField>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

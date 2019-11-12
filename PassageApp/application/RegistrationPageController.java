@@ -11,8 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class RegistrationPageController {
@@ -38,34 +40,66 @@ public class RegistrationPageController {
 	private Button registerButton;
 	
 	@FXML
+	private Label firstNameError;
+	
+	@FXML
+	private Label lastNameError;
+	
+	@FXML
+	private Label emailError;
+	
+	@FXML
+	private Label phoneError;
+	
+	@FXML
+	private Label passwordError;
+	
+	@FXML
+	private Label emailAlreadyExistError;
+	
+	@FXML
+	private AnchorPane registrationConfirmation;
+	
+	@FXML
+	private Button okButton;
+	
+	@FXML
 	public void registerButtonPressed(ActionEvent event) throws IOException {
+		removeErrors();
+		
 		//checking that information entered is valid
 		boolean validAccount = true;
-		if (!validateName(firstName.getText())) {
+		if (!validateName(firstName.getText()) || firstName.getText().isEmpty()) {
 			validAccount = false;
+			firstNameError.setVisible(true);
 			System.out.println("Invalid first name");
 		}
-		if (!validateName(lastName.getText())) {
+		if (!validateName(lastName.getText()) || lastName.getText().isEmpty()) {
 			validAccount = false;
 			System.out.println("Invalid last name");
-			//label
+			lastNameError.setVisible(true);
 		}
+		
 		if (!validateEmail(username.getText())) {
 			validAccount = false;
 			System.out.println("Invalid email");
-			//show label
+			emailError.setVisible(true);
+		} else if (!Main.emailAvailable(username.getText())) {
+			validAccount = false;
+			emailAlreadyExistError.setVisible(true);
 		}
+		
 		if (!validatePhone(phone.getText())) {
 			validAccount = false;
 			System.out.println("Invalid phone");
-			//show error label
+			phoneError.setVisible(true);
 		}
 		
 		System.out.println("Password: " + password.getText());
 		if(!validatePassword(password.getText())) {
 			validAccount = false;
 			System.out.println("Invalid pass");
-			//show error label
+			passwordError.setVisible(true);
 		}
 		if(!agreement.isSelected()) {
 			validAccount = false;
@@ -78,14 +112,42 @@ public class RegistrationPageController {
 			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
 			Main.changeCurrentUser(username.getText());
 			
-			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
-			Scene scene = new Scene(searchPageParent,900,600);
+			showConfirmationWindow();
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			window.setScene(scene);
-			window.show();
+//			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
+//			Scene scene = new Scene(searchPageParent,900,600);
+//			
+//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			window.setScene(scene);
+//			window.show();
 		}
+	}
+	
+	@FXML
+	public void okButtonPressed(ActionEvent event) throws IOException {
+		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
+		Scene scene = new Scene(searchPageParent,900,600);
+		
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		window.setScene(scene);
+		window.show();
+	}
+	
+	public void showConfirmationWindow() {
+		registrationConfirmation.setVisible(true);
+	}
+	
+	//remove errors after each time user press Register button
+	private void removeErrors() {
+		firstNameError.setVisible(false);
+		lastNameError.setVisible(false);
+		emailError.setVisible(false);
+		phoneError.setVisible(false);
+		passwordError.setVisible(false);
+		emailAlreadyExistError.setVisible(false);
+		
 	}
 	
 	//checks if first/last name is a valid name

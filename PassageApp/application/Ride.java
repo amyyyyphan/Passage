@@ -1,7 +1,7 @@
 package application;
 
 public class Ride {
-	private String driverName;
+	private String username;
 	private String start;
 	private String destination;
 	private String date;
@@ -13,8 +13,8 @@ public class Ride {
 	private String seats;
 	private String price;
 	
-	public Ride(String driverName, String start, String destination, String date, String time, String stopover1, String stopover2, String arrivalTime, String vehicle, String seats, String price) {
-		this.driverName = driverName;
+	public Ride(String username, String start, String destination, String date, String time, String stopover1, String stopover2, String arrivalTime, String vehicle, String seats, String price) {
+		this.username = username;
 		this.start = start;
 		this.destination = destination;
 		this.date = date;
@@ -37,8 +37,8 @@ public class Ride {
 		}
 	}
 	
-	public String getDriverName() {
-		return driverName;
+	public String getUsername() {
+		return username;
 	}
 	
 	public String getStart() {

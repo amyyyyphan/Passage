@@ -48,7 +48,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Label layoutX="17.0" layoutY="206.0" text="Departure Time:">
+            <Label layoutX="17.0" layoutY="206.0" text="Time of Travel:">
                <font>
                   <Font size="16.0" />
                </font></Label>

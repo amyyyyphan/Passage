@@ -1,0 +1,118 @@
+package application;
+
+import java.io.IOException;
+import java.util.regex.Pattern;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class RegistrationPageController {
+	@FXML
+	private TextField firstName;
+	
+	@FXML
+	private TextField lastName;
+	
+	@FXML
+	private TextField username;
+	
+	@FXML
+	private TextField phone;
+	
+	@FXML
+	private PasswordField password;
+	
+	@FXML
+	private CheckBox agreement;
+	
+	@FXML
+	private Button registerButton;
+	
+	@FXML
+	public void registerButtonPressed(ActionEvent event) throws IOException {
+		//checking that information entered is valid
+		boolean validAccount = true;
+		if (!validateName(firstName.getText())) {
+			validAccount = false;
+			System.out.println("Invalid first name");
+		}
+		if (!validateName(lastName.getText())) {
+			validAccount = false;
+			System.out.println("Invalid last name");
+			//label
+		}
+		if (!validateEmail(username.getText())) {
+			validAccount = false;
+			System.out.println("Invalid email");
+			//show label
+		}
+		if (!validatePhone(phone.getText())) {
+			validAccount = false;
+			System.out.println("Invalid phone");
+			//show error label
+		}
+		
+		System.out.println("Password: " + password.getText());
+		if(!validatePassword(password.getText())) {
+			validAccount = false;
+			System.out.println("Invalid pass");
+			//show error label
+		}
+		if(!agreement.isSelected()) {
+			validAccount = false;
+			System.out.println("Checkbox not selected");
+			//show error label
+		}
+		
+		//if there's nothing wrong with information given, add user data to database and go to Home page
+		if (validAccount) {
+			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
+			Main.changeCurrentUser(username.getText());
+			
+			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
+			Scene scene = new Scene(searchPageParent,900,600);
+			
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
+		}
+	}
+	
+	//checks if first/last name is a valid name
+	private boolean validateName(String name) {
+		return name.matches("^[a-zA-Z\\\\s]*$");
+	}
+	
+	//checks if email address is a valid email address
+	private boolean validateEmail(String email) {
+		//pattern for email
+		Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+		return pattern.matcher(email).matches();
+	}
+	
+	//checks that phone number is a valid phone number
+	private boolean validatePhone(String phone) {
+		return phone.matches("[0-9]+");
+	}
+	
+	//checks that the password meets all password requirements
+	//Password must be:
+	//	Made out of characters from the ASCII code
+	//	At least 8 characters long
+	//	At least one capital letter
+	//	At least one special character
+	//	At least one number
+	private boolean validatePassword(String password) {
+		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$");
+	}
+}

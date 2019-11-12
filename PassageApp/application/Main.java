@@ -43,6 +43,23 @@ public class Main extends Application {
 		launch(args);
 	}
 	
+	
+	public static boolean emailAvailable(String email) {
+		try {
+			Statement statement = con.createStatement();
+			String sql = ("SELECT * FROM `user` WHERE username = '" + email + "'");
+			ResultSet rs = statement.executeQuery(sql);
+			
+			//return true if the email does not exist in the database yet
+			if (!rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 	public static void addUser(String firstName, String lastName, String username, String password, String phone) {		
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost/passage_db", "root", "");
@@ -105,14 +122,33 @@ public class Main extends Application {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return "wrong username";
+		
+		//should not reach this
+		return "username";
+	}
+	
+	public static String getDriverNumber(String username) {
+		try {
+			Statement statement = con.createStatement();
+			String sql = "SELECT * FROM `user` WHERE username = '" + username + "'";
+			ResultSet rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				String phoneNumber = rs.getString("phone");
+				return phoneNumber;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		//should not reach this
+		return "phone number";
 	}
 	
 	public static void addRide(Ride ride) {			
 		try {
 			String query = "INSERT INTO ride (username, start, destination, date, time, stopOver1, stopOver2, arrivalTime, vehicle, seats, price) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, ride.getDriverName());
+			ps.setString(1, ride.getUsername());
 			ps.setString(2, ride.getStart());
 			ps.setString(3, ride.getDestination());
 			ps.setString(4, ride.getDate());
@@ -135,7 +171,7 @@ public class Main extends Application {
 		
 		try {
 			Statement statement = con.createStatement();
-			String sql = ("SELECT * FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' order by abs(timediff(str_to_date('" + time + "', '%h %p'), str_to_date(time, '%h %p'))) asc");
+			String sql = ("SELECT * FROM `ride` WHERE start = '" + start + "' and destination = '" + destination + "' and date = '" + date +"' and seats > 0 order by abs(timediff(str_to_date('" + time + "', '%H:%i'), str_to_date(time, '%H:%i'))) asc");
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				String name1 = rs.getString("username");
@@ -166,7 +202,7 @@ public class Main extends Application {
 		
 		try {
 			Statement statement = con.createStatement();
-			String sql = ("SELECT * FROM `ride` WHERE username = '" + currentUser + "' order by abs(datediff(now(), str_to_date(time, '%h %p'))) asc");
+			String sql = ("SELECT * FROM `ride` WHERE username = '" + currentUser + "' order by abs(datediff(now(), str_to_date(date, '%m/%d/%Y'))) asc");
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				String name1 = rs.getString("username");
@@ -190,6 +226,21 @@ public class Main extends Application {
 		}
 		
 		return myRides;
+	}
+	
+	public static void updateSeats(Ride ride) {
+		String oldSeatsNum = ride.getSeats();
+		int updatedSeatsNum = Integer.parseInt(oldSeatsNum) - 1;
+		String seats = "" + updatedSeatsNum;
+		String query = "UPDATE `ride` SET `seats` = REPLACE(seats, '" + oldSeatsNum + "', '" + seats + "') WHERE username = '" + ride.getUsername() + "' and destination = '" + ride.getDestination() + "' and date = '" + ride.getDate() + "' and time = '" + ride.getTime() + "'";
+		System.out.println(query);
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.executeUpdate();
+			System.out.println("Changed available seats");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void connectDB() {

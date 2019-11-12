@@ -75,7 +75,7 @@ public class MainController {
 	
 	@FXML
 	public void logout(ActionEvent event) throws IOException {
-		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		Stage window = (Stage) userButton.getScene().getWindow();
 		Parent loginPageParent = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
 		Scene scene = new Scene(loginPageParent, 900, 600);
 		

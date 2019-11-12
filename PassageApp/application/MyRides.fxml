@@ -16,7 +16,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="myRideBox1" layoutX="100.0" layoutY="119.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="myRideBox1" layoutX="100.0" layoutY="119.0" prefHeight="60.0" prefWidth="700.0">
          <children>
             <Label fx:id="date1" layoutX="14.0" layoutY="17.0" text="Date">
                <font>
@@ -40,7 +40,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="myRideBox2" layoutX="100.0" layoutY="190.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="myRideBox2" layoutX="100.0" layoutY="190.0" prefHeight="60.0" prefWidth="700.0">
          <children>
             <Label fx:id="date2" layoutX="14.0" layoutY="17.0" text="Date">
                <font>
@@ -64,7 +64,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="myRideBox3" layoutX="100.0" layoutY="262.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="myRideBox3" layoutX="100.0" layoutY="262.0" prefHeight="60.0" prefWidth="700.0">
          <children>
             <Label fx:id="date3" layoutX="14.0" layoutY="17.0" text="Date">
                <font>
@@ -88,7 +88,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="myRideBox4" layoutX="100.0" layoutY="334.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="myRideBox4" layoutX="100.0" layoutY="334.0" prefHeight="60.0" prefWidth="700.0">
          <children>
             <Label fx:id="date4" layoutX="14.0" layoutY="17.0" text="Date">
                <font>
@@ -112,7 +112,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="myRideBox5" layoutX="100.0" layoutY="406.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="myRideBox5" layoutX="100.0" layoutY="406.0" prefHeight="60.0" prefWidth="700.0">
          <children>
             <Label fx:id="date5" layoutX="14.0" layoutY="17.0" text="Date">
                <font>

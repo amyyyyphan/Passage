@@ -1,0 +1,42 @@
+package application;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class RiderConfirmationController {	
+	@FXML
+	private Label startDetail;
+	
+	@FXML
+	private Label destinationDetail;
+	
+	@FXML
+	private Label dateDetail;
+	
+	@FXML
+	private Label timeDetail;
+	
+	@FXML
+	private Label seatDetail;
+	
+	@FXML
+	private Label driverName;
+	
+	@FXML
+	private Label driverNumber;
+	
+	@FXML
+	private Label driverEmail;
+	
+	//accepts a ride to initialize for summary	
+	public void initData(Ride ride) {
+		startDetail.setText(ride.getStart());
+		destinationDetail.setText(ride.getDestination());
+		dateDetail.setText(ride.getDate());
+		timeDetail.setText(ride.getTime());
+		seatDetail.setText(ride.getSeats() + " Seats Available at " + ride.getPrice() + "/Seat");
+		driverName.setText(Main.getDriverName(ride.getUsername()));
+		driverNumber.setText(Main.getDriverNumber(ride.getUsername()));
+		driverEmail.setText(ride.getUsername());
+	}
+}

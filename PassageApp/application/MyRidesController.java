@@ -38,7 +38,6 @@ public class MyRidesController {
 	@FXML private Label seats4;
 	@FXML private Label seats5;
 	
-	@FXML
 	public void initData(ArrayList<Ride> rides) {
 		int myRideOffers = rides.size();
 		
@@ -54,9 +53,9 @@ public class MyRidesController {
 			myRideBox5.setVisible(false);
 		}
 		if (myRideOffers >= 2) {
-			date1.setText(rides.get(1).getDate());
-			destination1.setText(rides.get(1).getDestination());
-			seats1.setText(rides.get(1).getSeats());
+			date2.setText(rides.get(1).getDate());
+			destination2.setText(rides.get(1).getDestination());
+			seats2.setText(rides.get(1).getSeats());
 		} else {
 			myRideBox2.setVisible(false);
 			myRideBox3.setVisible(false);
@@ -64,9 +63,9 @@ public class MyRidesController {
 			myRideBox5.setVisible(false);
 		}
 		if (myRideOffers >= 3) {
-			date1.setText(rides.get(2).getDate());
-			destination1.setText(rides.get(2).getDestination());
-			seats1.setText(rides.get(2).getSeats());
+			date3.setText(rides.get(2).getDate());
+			destination3.setText(rides.get(2).getDestination());
+			seats3.setText(rides.get(2).getSeats());
 		} else {
 			myRideBox3.setVisible(false);
 			myRideBox4.setVisible(false);
@@ -74,18 +73,18 @@ public class MyRidesController {
 		}
 		
 		if (myRideOffers >= 4) {
-			date1.setText(rides.get(3).getDate());
-			destination1.setText(rides.get(3).getDestination());
-			seats1.setText(rides.get(3).getSeats());
+			date4.setText(rides.get(3).getDate());
+			destination4.setText(rides.get(3).getDestination());
+			seats4.setText(rides.get(3).getSeats());
 		} else {
 			myRideBox4.setVisible(false);
 			myRideBox5.setVisible(false);
 		}
 		
 		if (myRideOffers >= 5) {
-			date1.setText(rides.get(3).getDate());
-			destination1.setText(rides.get(3).getDestination());
-			seats1.setText(rides.get(3).getSeats());
+			date4.setText(rides.get(3).getDate());
+			destination4.setText(rides.get(3).getDestination());
+			seats4.setText(rides.get(3).getSeats());
 		}
 	}
 	

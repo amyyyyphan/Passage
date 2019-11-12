@@ -51,9 +51,9 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="titleBorder" prefHeight="60.0" prefWidth="900.0">
+      <AnchorPane fx:id="titleBorder" prefHeight="50.0" prefWidth="900.0">
          <children>
-            <Label fx:id="pageTitle" layoutX="379.0" layoutY="13.0" text="Travel Details">
+            <Label fx:id="pageTitle" layoutX="379.0" layoutY="8.0" text="Travel Details">
                <font>
                   <Font size="24.0" />
                </font>
