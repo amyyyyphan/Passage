@@ -183,6 +183,6 @@ public class RegistrationPageController {
 	//	At least one special character
 	//	At least one number
 	private boolean validatePassword(String password) {
-		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+=])(?=\\S+$).{8,}$");
+		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$");
 	}
 }

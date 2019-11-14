@@ -91,5 +91,4 @@
 #cost1, #cost2, #cost3, #cost4 {
 	-fx-text-fill: #4D9D76;
 	-fx-font-weight: bold;
-	-fx-font-size: 20px;
 }

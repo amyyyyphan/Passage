@@ -146,7 +146,7 @@ public class Main extends Application {
 	
 	public static void addRide(Ride ride) {			
 		try {
-			String query = "INSERT INTO ride (username, start, destination, date, time, stopover1, stopover2, arrivalTime, vehicle, seats, price) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO ride (username, start, destination, date, time, stopOver1, stopOver2, arrivalTime, vehicle, seats, price) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, ride.getUsername());
 			ps.setString(2, ride.getStart());
@@ -179,8 +179,8 @@ public class Main extends Application {
 				String destination1 = rs.getString("destination");
 				String date1 = rs.getString("date");
 				String time1 = rs.getString("time");
-				String stopover1 = rs.getString("stopover1");
-				String stopover2 = rs.getString("stopover2");
+				String stopover1 = rs.getString("stopOver1");
+				String stopover2 = rs.getString("stopOver2");
 				String arrivalTime1 = rs.getString("arrivalTime");
 				String vehicle1 = rs.getString("vehicle");
 				String seat1 = rs.getString("seats");
@@ -210,8 +210,8 @@ public class Main extends Application {
 				String destination1 = rs.getString("destination");
 				String date1 = rs.getString("date");
 				String time1 = rs.getString("time");
-				String stopover1 = rs.getString("stopover1");
-				String stopover2 = rs.getString("stopover2");
+				String stopover1 = rs.getString("stopOver1");
+				String stopover2 = rs.getString("stopOver2");
 				String arrivalTime1 = rs.getString("arrivalTime");
 				String vehicle1 = rs.getString("vehicle");
 				String seat1 = rs.getString("seats");

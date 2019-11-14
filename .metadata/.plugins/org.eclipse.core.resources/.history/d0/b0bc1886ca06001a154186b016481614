@@ -43,9 +43,7 @@ public class MyRidesController {
 	public void initData(ArrayList<Ride> rides) {
 		int myRideOffers = rides.size();
 		if (myRideOffers == 0) {
-			status.setText("You have not offered any rides.");
-		} else {
-			status.setVisible(false);
+			status.setText("You have not offered an rides.");
 		}
 		
 		if (myRideOffers >= 1) {

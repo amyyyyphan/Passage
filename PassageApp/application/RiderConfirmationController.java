@@ -41,8 +41,8 @@ public class RiderConfirmationController {
 		startDetail.setText(ride.getStart());
 		destinationDetail.setText(ride.getDestination());
 		dateDetail.setText(ride.getDate());
-		timeDetail.setText(ride.getTime());
-		seatDetail.setText(ride.getSeats() + " Seats Available at " + ride.getPrice() + "/Seat");
+		timeDetail.setText(ride.getTime() + " - " + ride.getArrivalTime());
+		seatDetail.setText("One seat for " + ride.getPrice());
 		driverName.setText(Main.getDriverName(ride.getUsername()));
 		driverNumber.setText(Main.getDriverNumber(ride.getUsername()));
 		driverEmail.setText(ride.getUsername());

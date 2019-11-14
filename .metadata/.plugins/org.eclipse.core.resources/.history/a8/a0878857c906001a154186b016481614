@@ -11,9 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class DriverConfirmationPageController {
-	private Ride rideConfirmed;
-	
+public class RiderConfirmationController {	
 	@FXML
 	private Label startDetail;
 	
@@ -29,14 +27,25 @@ public class DriverConfirmationPageController {
 	@FXML
 	private Label seatDetail;
 	
+	@FXML
+	private Label driverName;
+	
+	@FXML
+	private Label driverNumber;
+	
+	@FXML
+	private Label driverEmail;
+	
 	//accepts a ride to initialize for summary	
 	public void initData(Ride ride) {
-		rideConfirmed = ride;
-		startDetail.setText(rideConfirmed.getStart());
-		destinationDetail.setText(rideConfirmed.getDestination());
-		dateDetail.setText(rideConfirmed.getDate());
-		timeDetail.setText(rideConfirmed.getTime() + " - " + rideConfirmed.getArrivalTime());
-		seatDetail.setText(rideConfirmed.getSeats() + " Seats Available at " + rideConfirmed.getPrice() + "/Seat");
+		startDetail.setText(ride.getStart());
+		destinationDetail.setText(ride.getDestination());
+		dateDetail.setText(ride.getDate());
+		timeDetail.setText(ride.getTime() + " " + ride.getArrivalTime());
+		seatDetail.setText(ride.getSeats() + " Seats Available at " + ride.getPrice() + "/Seat");
+		driverName.setText(Main.getDriverName(ride.getUsername()));
+		driverNumber.setText(Main.getDriverNumber(ride.getUsername()));
+		driverEmail.setText(ride.getUsername());
 	}
 	
 	public void backToHomePage(ActionEvent event) throws IOException {

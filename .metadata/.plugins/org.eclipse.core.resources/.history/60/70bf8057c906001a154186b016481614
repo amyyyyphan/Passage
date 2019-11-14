@@ -24,7 +24,7 @@
     -fx-background-color: transparent;
 }
 
-#loginButton, #registerButton, #search, #nextButton, #greenButton, #selectButton1, #selectButton2, #selectButton3, #selectButton4 {
+#loginButton, #registerButton, #search, #nextButton, #greenButton, #selectButton1, #selectButton2 {
 	-fx-background-color: #4D9D76;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
@@ -66,7 +66,7 @@
 	-fx-font-weight: bold;
 }
 
-#summaryWindow, #firstRecommendation, #secondRecommendation, #thirdRecommendation, #fourthRecommendation, #myRideBox1, #myRideBox2, #myRideBox3, #myRideBox4, #myRideBox5 {
+#summaryWindow, #firstRecommendation, #secondRecommendation, #myRideBox1, #myRideBox2, #myRideBox3, #myRideBox4, #myRideBox5 {
 	-fx-background-color: #C0CBE0;
 	-fx-background-radius: 16px;
 }
@@ -88,8 +88,7 @@
 	-fx-background-color: transparent;
 }
 
-#cost1, #cost2, #cost3, #cost4 {
+#cost1, #cost2 {
 	-fx-text-fill: #4D9D76;
 	-fx-font-weight: bold;
-	-fx-font-size: 20px;
 }

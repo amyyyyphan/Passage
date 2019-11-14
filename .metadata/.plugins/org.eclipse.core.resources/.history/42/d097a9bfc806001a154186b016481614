@@ -35,7 +35,7 @@ public class DriverConfirmationPageController {
 		startDetail.setText(rideConfirmed.getStart());
 		destinationDetail.setText(rideConfirmed.getDestination());
 		dateDetail.setText(rideConfirmed.getDate());
-		timeDetail.setText(rideConfirmed.getTime() + " - " + rideConfirmed.getArrivalTime());
+		timeDetail.setText(rideConfirmed.getTime() + " " + rideConfirmed.getArrivalTime());
 		seatDetail.setText(rideConfirmed.getSeats() + " Seats Available at " + rideConfirmed.getPrice() + "/Seat");
 	}
 	

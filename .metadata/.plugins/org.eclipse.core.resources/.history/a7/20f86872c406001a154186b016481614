@@ -164,15 +164,7 @@ public class RegistrationPageController {
 	
 	//checks that phone number is a valid phone number
 	private boolean validatePhone(String phone) {
-		//ex: 1234567890
-		if (phone.matches("\\d{10}")) {
-			return true;
-		//ex:(408)123-4567
-		} else if (phone.matches("\\(\\d{3}\\)\\d{3}-\\d{4}")){
-			return true;
-		} else {
-			return false;
-		}
+		return phone.matches("[0-9]+");
 	}
 	
 	//checks that the password meets all password requirements
@@ -183,6 +175,6 @@ public class RegistrationPageController {
 	//	At least one special character
 	//	At least one number
 	private boolean validatePassword(String password) {
-		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+=])(?=\\S+$).{8,}$");
+		return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$");
 	}
 }

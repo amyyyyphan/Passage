@@ -38,15 +38,8 @@ public class MyRidesController {
 	@FXML private Label seats4;
 	@FXML private Label seats5;
 	
-	@FXML private Label status;
-	
 	public void initData(ArrayList<Ride> rides) {
 		int myRideOffers = rides.size();
-		if (myRideOffers == 0) {
-			status.setText("You have not offered any rides.");
-		} else {
-			status.setVisible(false);
-		}
 		
 		if (myRideOffers >= 1) {
 			date1.setText(rides.get(0).getDate());
