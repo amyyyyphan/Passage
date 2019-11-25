@@ -15,22 +15,16 @@ import javafx.stage.Stage;
 public class DriveDetailsController {
 	@FXML
 	private TextField stopover1;
-
 	@FXML
 	private TextField stopover2;
-	
 	@FXML
 	private TextField arrivalTime;
-	
 	@FXML
 	private TextField vehicle;
-	
 	@FXML
 	private TextField seatInfo;
-	
 	@FXML
 	private TextField priceInfo;
-	
 	@FXML
 	private Label error;
 	
@@ -39,6 +33,7 @@ public class DriveDetailsController {
 	private String date;
 	private String time;
 	
+	//information from Offer page
 	public void travelDetails(String start, String destination, String date, String time) {
 		this.start = start;
 		this.destination = destination;
@@ -54,16 +49,16 @@ public class DriveDetailsController {
 			//gets the current user's username to save along with the ride offered in database
 			String driverUsername = Main.getCurrentUsername();
 			Ride newRide = new Ride(driverUsername, start, destination, date, time, stopover1.getText(), stopover2.getText(), arrivalTime.getText(), vehicle.getText(), seatInfo.getText(), priceInfo.getText());
+			
 			//save new ride into database
 			Main.addRide(newRide);
 			
-			//pass ride to the confirmation page
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("DriverConfirmation.fxml"));
 			Parent confirmationPageParent = loader.load();
 			Scene confirmationPageScene = new Scene(confirmationPageParent);
 			
-			//access controller
+			//access driver confirmation page controller and pass ride information to the driver confirmation page
 			DriverConfirmationPageController controller = loader.getController();
 			controller.initData(newRide);
 			

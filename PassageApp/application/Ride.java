@@ -24,6 +24,7 @@ public class Ride {
 		this.seats = seats;
 		this.price = price;
 		
+		//if nothing was entered for stopover, replace with "none"
 		if (stopover1.equals("")) {
 			this.stopover1 = "none";
 		} else {

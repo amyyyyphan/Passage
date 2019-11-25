@@ -214,7 +214,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="thirdRecommendation" layoutY="320.0" prefHeight="305.0" prefWidth="292.0">
+                  <AnchorPane fx:id="thirdRecommendation" layoutY="325.0" prefHeight="305.0" prefWidth="292.0">
                      <children>
                         <Label fx:id="cost3" layoutX="185.0" layoutY="14.0" text="Cost">
                            <font>
@@ -301,7 +301,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="fourthRecommendation" layoutX="393.0" layoutY="320.0" prefHeight="305.0" prefWidth="292.0">
+                  <AnchorPane fx:id="fourthRecommendation" layoutX="393.0" layoutY="325.0" prefHeight="305.0" prefWidth="292.0">
                      <children>
                         <Label fx:id="cost4" layoutX="185.0" layoutY="14.0" text="Cost">
                            <font>

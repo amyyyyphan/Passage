@@ -51,15 +51,18 @@ public class DriverConfirmationPageController {
 	@FXML
 	public void viewMyRides(ActionEvent event) throws IOException {
 		
+		//pass rides to the My Rides page
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("MyRides.fxml"));
 		Parent myRidesPageParent = loader.load();
 		Scene myRidesPageScene = new Scene(myRidesPageParent);
 		
-		//access controller and pass rides that the user offered to My Rides page
+		//access controller
 		MyRidesController controller = loader.getController();
+		//pass travel details to Drive Details page
 		controller.initData(Main.viewMyRides());
 		
+		//Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		Stage window = (Stage) userButton.getScene().getWindow();
 		myRidesPageScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		window.setScene(myRidesPageScene);

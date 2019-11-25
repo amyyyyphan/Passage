@@ -124,14 +124,19 @@ public class AvailableRidesPageController {
 	@FXML
 	private Button selectButton4;
 	
-	//accepts a list of rides that matched with information from Search page
-	//currently can only show up to 4 rides
+	//show available rides boxes based on how many rides matched 
 	public void initData(ArrayList<Ride> rides) {
 		ridesList = rides;
 		if (rides.size() == 0) {
 			status.setText("Sorry, there are no rides available.");
 			scrollPane.setVisible(false);
-		} else if (rides.size() >= 1) {		
+//			firstRecommendation.setVisible(false);
+//			secondRecommendation.setVisible(false);
+		} else if (rides.size() >= 1) {
+			//only show the one ride box
+//			scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+//			secondRecommendation.setVisible(false);
+			
 			status.setText("One ride is recommended for your travel details...");
 			Ride ride = rides.get(0);
 			cost1.setText(ride.getPrice() + "/Seat");
@@ -146,6 +151,19 @@ public class AvailableRidesPageController {
 			name1.setText(Main.getDriverName(ride.getUsername()));
 			
 			if (rides.size() >= 2) {
+//				status.setText("Two rides are recommended for your travel details...");
+//				Ride ride = rides.get(0);
+//				cost1.setText(ride.getPrice() + "/Seat");
+//				start1.setText(ride.getStart());
+//				destination1.setText(ride.getDestination());
+//				vehicle1.setText(ride.getVehicle());
+//				stopover11.setText(ride.getStopover1());
+//				stopover12.setText(ride.getStopover2());
+//				time1.setText(ride.getTime());
+//				arrivalTime1.setText(ride.getArrivalTime());
+//				seat1.setText(ride.getSeats());
+//				name1.setText(Main.getDriverName(ride.getUsername()));
+			
 				status.setText("Two rides are recommended for your travel details...");
 				Ride ride2 = rides.get(1);
 				cost2.setText(ride2.getPrice() + "/Seat");

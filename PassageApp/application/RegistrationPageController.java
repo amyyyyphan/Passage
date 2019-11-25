@@ -20,19 +20,14 @@ import javafx.stage.Stage;
 public class RegistrationPageController {
 	@FXML
 	private TextField firstName;
-	
 	@FXML
 	private TextField lastName;
-	
 	@FXML
 	private TextField username;
-	
 	@FXML
 	private TextField phone;
-	
 	@FXML
 	private PasswordField password;
-	
 	@FXML
 	private CheckBox agreement;
 	
@@ -41,25 +36,19 @@ public class RegistrationPageController {
 	
 	@FXML
 	private Label firstNameError;
-	
 	@FXML
 	private Label lastNameError;
-	
 	@FXML
 	private Label emailError;
-	
 	@FXML
 	private Label phoneError;
-	
 	@FXML
 	private Label passwordError;
-	
 	@FXML
 	private Label emailAlreadyExistError;
 	
 	@FXML
 	private AnchorPane registrationConfirmation;
-	
 	@FXML
 	private Button okButton;
 	
@@ -69,12 +58,13 @@ public class RegistrationPageController {
 		
 		//checking that information entered is valid
 		boolean validAccount = true;
-		if (!validateName(firstName.getText()) || firstName.getText().isEmpty()) {
+		
+		if (firstName.getText().isEmpty() || !validateName(firstName.getText())) {
 			validAccount = false;
 			firstNameError.setVisible(true);
 			System.out.println("Invalid first name");
 		}
-		if (!validateName(lastName.getText()) || lastName.getText().isEmpty()) {
+		if (lastName.getText().isEmpty() || !validateName(lastName.getText())) {
 			validAccount = false;
 			System.out.println("Invalid last name");
 			lastNameError.setVisible(true);
@@ -95,32 +85,23 @@ public class RegistrationPageController {
 			phoneError.setVisible(true);
 		}
 		
-		System.out.println("Password: " + password.getText());
 		if(!validatePassword(password.getText())) {
 			validAccount = false;
 			System.out.println("Invalid pass");
 			passwordError.setVisible(true);
 		}
+		
 		if(!agreement.isSelected()) {
 			validAccount = false;
 			System.out.println("Checkbox not selected");
-			//show error label
 		}
 		
-		//if there's nothing wrong with information given, add user data to database and go to Home page
+		//if there's nothing wrong with information given and agreement is checked, add user data to database and show confirmation window
 		if (validAccount) {
 			Main.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText(), phone.getText());
 			Main.changeCurrentUser(username.getText());
 			
 			showConfirmationWindow();
-			
-//			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//			Parent searchPageParent = FXMLLoader.load(getClass().getResource("Home.fxml"));
-//			Scene scene = new Scene(searchPageParent,900,600);
-//			
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//			window.setScene(scene);
-//			window.show();
 		}
 	}
 	
@@ -139,7 +120,8 @@ public class RegistrationPageController {
 		registrationConfirmation.setVisible(true);
 	}
 	
-	//remove errors after each time user press Register button
+	//remove errors
+	//function is called to remove errors when registration page is loaded or to remove previous errors
 	private void removeErrors() {
 		firstNameError.setVisible(false);
 		lastNameError.setVisible(false);

@@ -28,7 +28,6 @@ public class Main extends Application {
 		
 		try {
 			primaryStage.setTitle("Passage");
-//			Parent root = FXMLLoader.load(getClass().getResource("/application/Home.fxml"));
 			Parent root = FXMLLoader.load(getClass().getResource("/application/LoginPage.fxml"));
 			Scene scene = new Scene(root, 900, 600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -43,7 +42,7 @@ public class Main extends Application {
 		launch(args);
 	}
 	
-	
+	//checks if the email is already being used by a user
 	public static boolean emailAvailable(String email) {
 		try {
 			Statement statement = con.createStatement();
@@ -54,6 +53,7 @@ public class Main extends Application {
 			if (!rs.next()) {
 				return true;
 			}
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -71,7 +71,6 @@ public class Main extends Application {
 			ps.setString(4,  password);
 			ps.setString(5,  phone);
 			ps.executeUpdate();
-			//close
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -98,7 +97,8 @@ public class Main extends Application {
 		return false;
 	}
 	
-	//change currentUser to given username
+	//changes currentUser to the new username given
+	//this function gets called whenever someone successfully logged in
 	public static void changeCurrentUser(String username) {
 		currentUser = username;
 	}
@@ -144,6 +144,7 @@ public class Main extends Application {
 		return "phone number";
 	}
 	
+	//add ride to database
 	public static void addRide(Ride ride) {			
 		try {
 			String query = "INSERT INTO ride (username, start, destination, date, time, stopover1, stopover2, arrivalTime, vehicle, seats, price) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -165,6 +166,8 @@ public class Main extends Application {
 		}
 	}
 	
+	//searches for rides in the database that matches with the information given
+	//rides will be ordered by being closer to the time given
 	public static ArrayList<Ride> searchRide(String start, String destination, String date, String time) {
 		//keeps track of rides that matches with description
 		ArrayList<Ride> matchingRides = new ArrayList<Ride>();
@@ -197,6 +200,7 @@ public class Main extends Application {
 		return matchingRides;
 	}
 	
+	//finds rides in the database offered by current user
 	public static ArrayList<Ride> viewMyRides() {
 		ArrayList<Ride> myRides = new ArrayList<Ride>();
 		
@@ -239,10 +243,12 @@ public class Main extends Application {
 			ps.executeUpdate();
 			System.out.println("Changed available seats");
 		} catch (SQLException e) {
+			System.out.println("Failed to update available seats number");
 			e.printStackTrace();
 		}
 	}
 	
+	//connect to database
 	public void connectDB() {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost/passage_db", "root", "");

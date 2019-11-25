@@ -17,21 +17,18 @@ import javafx.stage.Stage;
 public class LoginPageController {
 	@FXML
 	private TextField username;
-	
 	@FXML
 	private PasswordField password;
-	
 	@FXML
 	private Label error;
-	
 	@FXML 
 	private Button loginButton;
-	
 	@FXML 
 	private Button registerButton;
 	
 	@FXML
 	public void loginButtonPressed(ActionEvent event) throws IOException {
+		//check if username and password are correct
 		if(Main.checkAccountInfo(username.getText(), password.getText())) {
 			Main.changeCurrentUser(username.getText());
 			Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -42,6 +39,7 @@ public class LoginPageController {
 			window.setScene(scene);
 			window.show();
 		} else {
+			//if username or password is incorrect, do not let user go pass login page and show error
 			error.setVisible(true);
 		}
 	}
