@@ -146,7 +146,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="brand" layoutX="811.0" layoutY="561.0" text="Passage">
+      <Label fx:id="brand" layoutX="801.0" layoutY="551.0" text="Passage">
          <font>
             <Font size="24.0" />
          </font>

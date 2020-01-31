@@ -87,7 +87,7 @@ public class RegistrationPageController {
 		
 		if(!validatePassword(password.getText())) {
 			validAccount = false;
-			System.out.println("Invalid pass");
+			System.out.println("Invalid password: " + password.getText());
 			passwordError.setVisible(true);
 		}
 		

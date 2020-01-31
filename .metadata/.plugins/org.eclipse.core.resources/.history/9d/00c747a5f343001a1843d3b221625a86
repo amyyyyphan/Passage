@@ -207,7 +207,7 @@ public class Main extends Application {
 		
 		try {
 			Statement statement = con.createStatement();
-			String sql = ("SELECT * FROM `ride` WHERE username = '" + currentUser + "' and datediff(str_to_date(date, '%m/%d/%Y'), now()) >= 0" + " order by abs(datediff(now(), str_to_date(date, '%m/%d/%Y'))) asc");
+			String sql = ("SELECT * FROM `ride` WHERE username = '" + currentUser + "' and datediff(now(), str_to_date(date, '%m/%d/%Y')) >= 0" + " order by abs(datediff(now(), str_to_date(date, '%m/%d/%Y'))) asc");
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next()) {
 				String name1 = rs.getString("username");
@@ -223,6 +223,7 @@ public class Main extends Application {
 				String price1 = rs.getString("price");
 				Ride rideFound = new Ride(name1, start1, destination1, date1, time1, stopover1, stopover2, arrivalTime1, vehicle1, seat1, price1);
 				myRides.add(rideFound);
+				System.out.println("Passed");
 			}
 			rs.close();
 		} catch (SQLException e) {
