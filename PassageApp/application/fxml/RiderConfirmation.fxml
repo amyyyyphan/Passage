@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="page" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RiderConfirmationController">
+   <children>
+      <AnchorPane fx:id="titleBorder" prefHeight="50.0" prefWidth="900.0">
+         <children>
+            <Label fx:id="pageTitle" layoutX="351.0" layoutY="8.0" text="Confirmation Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="userButton" layoutX="854.0" layoutY="5.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#logout" prefHeight="40.0" prefWidth="40.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#viewMyRides" text="My Rides" />
+                  <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+               </items>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+      <Label fx:id="brand" layoutX="811.0" layoutY="561.0" text="Passage">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="summaryWindow" layoutX="93.0" layoutY="182.0" prefHeight="320.0" prefWidth="251.0">
+         <children>
+            <Label layoutX="17.0" layoutY="47.0" text="Starting Point:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="startDetail" layoutX="18.0" layoutY="64.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="100.0" text="Destination:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="destinationDetail" layoutX="17.0" layoutY="117.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="152.0" text="Date of Travel:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateDetail" layoutX="18.0" layoutY="171.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="206.0" text="Time of Travel:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeDetail" layoutX="18.0" layoutY="225.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="261.0" text="Seat Details:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="seatDetail" layoutX="16.0" layoutY="280.0" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="57.0" layoutY="4.0" text="Summary of Details">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Line endX="132.33331298828125" layoutX="105.0" layoutY="35.0" startX="-88.66665649414062" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="labels" layoutX="398.0" layoutY="182.0" prefHeight="70.0" prefWidth="433.0" text="Please screenshot this image as proof of booking. Bring your ID for the ride. For inquiries, please contact your driver directly." wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="398.0" layoutY="282.0" text="Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="398.0" layoutY="302.0" text="Number:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labels" layoutX="398.0" layoutY="322.0" text="Email Address:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="driverName" layoutX="530.0" layoutY="282.0" text="name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="driverNumber" layoutX="530.0" layoutY="302.0" text="number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="driverEmail" layoutX="530.0" layoutY="322.0" text="email address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="greenButton" layoutX="689.0" layoutY="386.0" mnemonicParsing="false" onAction="#backToHomePage" text="Back to Home Page">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="status" layoutX="172.0" layoutY="94.0" text="Congrats! Your Ride is now booked">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

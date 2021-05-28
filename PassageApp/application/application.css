@@ -13,7 +13,7 @@
 #userButton {
 	-fx-background-radius: 30;
 	-fx-background-color: transparent;
-    -fx-background-image: url("userIcon.png");
+    -fx-background-image: url("/application/images/userIcon.png");
     -fx-background-size: 40px, 40px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
