@@ -42,7 +42,7 @@ public class SearchPageController {
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Home.fxml"));
 			Scene scene = new Scene(searchPageParent,900,600);
 			
-			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} else {
@@ -74,7 +74,7 @@ public class SearchPageController {
 				controller.initData(availableRides);
 				
 				//show Available Rides page
-				availablePageScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+				availablePageScene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 				window.setScene(availablePageScene);
 				window.show();
 			}

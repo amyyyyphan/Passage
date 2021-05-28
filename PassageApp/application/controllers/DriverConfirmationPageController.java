@@ -43,7 +43,7 @@ public class DriverConfirmationPageController {
 		Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Home.fxml"));
 		Scene scene = new Scene(searchPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}
@@ -61,7 +61,7 @@ public class DriverConfirmationPageController {
 		controller.initData(Main.viewMyRides());
 		
 		Stage window = (Stage) userButton.getScene().getWindow();
-		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(myRidesPageScene);
 		window.show();
 	}
@@ -69,10 +69,10 @@ public class DriverConfirmationPageController {
 	@FXML
 	public void logout(ActionEvent event) throws IOException {
 		Stage window = (Stage) userButton.getScene().getWindow();
-		Parent loginPageParent = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+		Parent loginPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/LoginPage.fxml"));
 		Scene scene = new Scene(loginPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}

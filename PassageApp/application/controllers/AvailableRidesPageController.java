@@ -225,7 +225,7 @@ public class AvailableRidesPageController {
 		}
 		
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-		confirmationPageScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		confirmationPageScene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(confirmationPageScene);
 		window.show();
 	}
@@ -237,7 +237,7 @@ public class AvailableRidesPageController {
 		Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Home.fxml"));
 		Scene scene = new Scene(searchPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}

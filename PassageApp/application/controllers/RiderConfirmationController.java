@@ -49,7 +49,7 @@ public class RiderConfirmationController {
 		Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Home.fxml"));
 		Scene scene = new Scene(searchPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}
@@ -69,7 +69,7 @@ public class RiderConfirmationController {
 		
 		//show My Rides page
 		Stage window = (Stage) userButton.getScene().getWindow();
-		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(myRidesPageScene);
 		window.show();
 	}
@@ -81,7 +81,7 @@ public class RiderConfirmationController {
 		Parent loginPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/LoginPage.fxml"));
 		Scene scene = new Scene(loginPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}

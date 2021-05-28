@@ -123,7 +123,7 @@ public class MyRidesController {
 		Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Home.fxml"));
 		Scene scene = new Scene(searchPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}

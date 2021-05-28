@@ -30,7 +30,7 @@ public class Main extends Application {
 			primaryStage.setTitle("Passage");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/fxml/LoginPage.fxml"));
 			Scene scene = new Scene(root, 900, 600);
-			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

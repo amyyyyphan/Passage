@@ -28,7 +28,7 @@ public class HomeController {
 			Parent searchPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/Search.fxml"));
 			Scene scene = new Scene(searchPageParent, 900, 600);
 			
-			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		}
@@ -37,7 +37,7 @@ public class HomeController {
 			Parent offerPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/OfferPage.fxml"));
 			Scene scene = new Scene(offerPageParent, 900, 600);
 			
-			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		}
@@ -58,7 +58,7 @@ public class HomeController {
 		controller.initData(Main.viewMyRides());
 		
 		Stage window = (Stage) userButton.getScene().getWindow();
-		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		myRidesPageScene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(myRidesPageScene);
 		window.show();
 	}
@@ -69,7 +69,7 @@ public class HomeController {
 		Parent loginPageParent = FXMLLoader.load(getClass().getResource("/application/fxml/LoginPage.fxml"));
 		Scene scene = new Scene(loginPageParent, 900, 600);
 		
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/application/css/application.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}
